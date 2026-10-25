@@ -1,0 +1,335 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: #f4f8f5;
+  color: #1a3c34;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+h1 {
+  font-size: 42px;
+  color: #1a3c34;
+  margin-top: 30px;
+  margin-bottom: 8px;
+}
+
+h2 {
+  color: #2d6a4f;
+  font-size: 24px;
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+
+p {
+  font-size: 16px;
+  color: #3a3a3a;
+}
+
+/* --- Nav --- */
+nav {
+  display: flex;
+  gap: 28px;
+  padding: 20px 0;
+  margin-bottom: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #2d6a4f;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+nav a:hover {
+  border-bottom: 2px solid #2d6a4f;
+}
+
+/* --- Hero section (homepage) --- */
+.hero {
+  background: linear-gradient(135deg, #2d6a4f, #1a3c34);
+  color: white;
+  padding: 50px 36px;
+  border-radius: 16px;
+  margin: 20px 0 40px;
+}
+
+.hero h1 {
+  color: white;
+  margin-top: 0;
+}
+
+.hero p {
+  color: #d8ece2;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+/* --- Buttons --- */
+button, .btn {
+  cursor: pointer;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+button[type="submit"] {
+  background-color: #2d6a4f;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 15px;
+  box-shadow: 0 2px 6px rgba(45, 106, 79, 0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(45, 106, 79, 0.4);
+}
+
+#get-location {
+  background-color: white;
+  color: #2d6a4f;
+  border: 1.5px solid #2d6a4f;
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+#get-location:hover {
+  background-color: #eaf4ef;
+}
+
+/* --- Form --- */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 420px;
+  gap: 6px;
+  margin-top: 20px;
+}
+
+label {
+  font-weight: 600;
+  margin-top: 14px;
+  font-size: 14px;
+  color: #2d6a4f;
+}
+
+select, input, textarea {
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1.5px solid #d4ddd8;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  background-color: white;
+  transition: border-color 0.15s ease;
+}
+
+select:focus, input:focus, textarea:focus {
+  outline: none;
+  border-color: #2d6a4f;
+}
+
+textarea {
+  min-height: 80px;
+}
+
+#confirmation {
+  margin-top: 18px;
+  font-weight: 600;
+  color: #2d6a4f;
+  padding: 12px 16px;
+  background-color: #eaf4ef;
+  border-radius: 8px;
+}
+
+#location-status, #id-suggestion {
+  font-size: 14px;
+  color: #5a6b62;
+  margin-top: 4px;
+}
+
+/* --- Cards (sightings, species ID guide) --- */
+.sighting-entry, .species-card {
+  background-color: white;
+  border: 1px solid #e2e8e4;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  transition: box-shadow 0.2s ease;
+}
+
+.sighting-entry:hover, .species-card:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.sighting-entry strong {
+  color: #2d6a4f;
+  font-size: 18px;
+}
+
+.sighting-entry p {
+  margin: 6px 0 0 0;
+  font-size: 14px;
+  color: #4a4a4a;
+}
+
+.sighting-photo {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.species-cards {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.species-card {
+  width: 210px;
+}
+
+.species-card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.species-card strong {
+  display: block;
+  color: #2d6a4f;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.species-card p {
+  font-size: 13px;
+  color: #4a4a4a;
+}
+
+/* --- Map --- */
+#map {
+  height: 420px;
+  border-radius: 12px;
+  margin-top: 14px;
+  border: 1px solid #e2e8e4;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+/* --- About page photo --- */
+.about-photo {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 12px;
+  margin: 18px 0;
+  display: block;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+/* --- Mobile responsiveness --- */
+@media (max-width: 600px) {
+  h1 { font-size: 30px; }
+  .hero { padding: 32px 20px; }
+  nav { flex-wrap: wrap; gap: 16px; }
+  .species-cards { flex-direction: column; }
+  .species-card { width: 100%; }
+}
+.form-section {
+  background-color: white;
+  border: 1px solid #e2e8e4;
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 18px;
+}
+
+.form-section h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #1a3c34;
+  margin: 0 0 12px 0;
+}
+
+.photo-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #b8ccc2;
+  border-radius: 10px;
+  padding: 30px 16px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #f9fbfa;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.photo-dropzone:hover {
+  border-color: #2d6a4f;
+  background-color: #eef6f1;
+}
+
+.dropzone-icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.dropzone-text {
+  font-weight: 600;
+  color: #2d6a4f;
+  font-size: 15px;
+}
+
+.dropzone-subtext {
+  font-size: 13px;
+  color: #8a9a91;
+  margin-top: 4px;
+}
+
+#photo-filename {
+  font-size: 13px;
+  color: #5a6b62;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.id-suggestion-box {
+  background-color: #eaf4ef;
+  border: 1px solid #b8ccc2;
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-top: 12px;
+}
+
+.id-suggestion-box p {
+  margin: 0;
+  color: #1a3c34;
+  font-size: 14px;
+  font-weight: 500;
+}
+.sighting-photo {
+  display: block; /* 👈 Forces the image onto its own line above the text */
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}

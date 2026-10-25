@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Report a Sighting</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="report.html">Report a Sighting</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <h1>🌿 Report a Sighting</h1>
+
+  <div class="id-guide">
+    <h2>Not sure what you're looking at?</h2>
+    <p>Here's what to look for:</p>
+    <div class="species-cards">
+      <div class="species-card">
+        <img src="images/water chestnuts/waterchestnut3_460.jpg" alt="Water Chestnut">
+        <strong>Water Chestnut</strong>
+        <p>Floating rosettes of triangular, serrated leaves. Forms dense mats on the water surface.</p>
+      </div>
+      <div class="species-card">
+        <img src="images/water chestnut seeds/images (2).jpeg" alt="Water Chestnut Seed">
+        <strong>Water Chestnut (Seed)</strong>
+        <p>Hard, spiky black or brown seed pods, often washed up along shorelines.</p>
+      </div>
+      <div class="species-card">
+        <img src="images/water hyacinth/Eichhornia_crassipes_FlickrCommons_Andreas_Kay.jpg" alt="Water Hyacinth">
+        <strong>Water Hyacinth</strong>
+        <p>Thick, glossy round leaves with inflated stems. Purple flower spikes.</p>
+      </div>
+      <div class="species-card">
+        <img src="images/hydrilla/test.jpg" alt="Hydrilla">
+        <strong>Hydrilla</strong>
+        <p>Long, submerged stems with small pointed leaves in whorls of 4-8.</p>
+      </div>
+    </div>
+  </div>
+
+  <form id="sighting-form">
+
+    <div class="form-section">
+      <h3>📷 Photo</h3>
+      <label for="photo" class="photo-dropzone">
+        <span class="dropzone-icon">📸</span>
+        <span class="dropzone-text">Click to choose a photo</span>
+        <span class="dropzone-subtext">JPG or PNG — we'll try to identify it for you</span>
+      </label>
+      <input type="file" id="photo" accept="image/jpeg,image/png" style="display:none;">
+      
+      <p id="photo-filename"></p>
+      
+      <div id="preview-container" style="display:none; margin-top: 15px; text-align: center;">
+        <img id="preview-image" src="#" alt="Sighting Preview" style="max-width: 100%; max-height: 250px; border-radius: 8px; border: 2px dashed #ccc;">
+      </div>
+
+      <div id="id-suggestion-box" class="id-suggestion-box" style="display:none;">
+        <p id="id-suggestion"></p>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3>🌱 Species</h3>
+      <label for="species">Confirm or select the species</label>
+      <select id="species" required>
+        <option value="">-- Select a species --</option>
+        <option value="Water Chestnut">Water Chestnut</option>
+        <option value="Water Chestnut Seed">Water Chestnut Seed</option>
+        <option value="Water Hyacinth">Water Hyacinth</option>
+        <option value="Hydrilla">Hydrilla</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-section">
+      <h3>📍 Location</h3>
+      <label for="location">Description (e.g. "near the footbridge")</label>
+      <input type="text" id="location" required>
+      <button type="button" id="get-location">📍 Use My Current Location</button>
+      <p id="location-status"></p>
+    </div>
+
+    <div class="form-section">
+      <h3>📝 Notes</h3>
+      <label for="notes">Anything else worth mentioning?</label>
+      <textarea id="notes" rows="4" placeholder="Describe population size, water conditions, etc."></textarea>
+    </div>
+
+    <!-- Fixed Form Submissions Container & Added Missing Confirmation element -->
+    <div class="form-actions">
+      <button type="submit" id="submit-btn" class="btn-submit">🚀 Submit Sighting Report</button>
+      <p id="confirmation" style="margin-top: 15px; font-weight: 500; text-align: center; color: #2e7d32;"></p>
+    </div>
+
+  </form>
+
+  <!-- CRITICAL FIX: Linked your modular script file into the page layout -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>
